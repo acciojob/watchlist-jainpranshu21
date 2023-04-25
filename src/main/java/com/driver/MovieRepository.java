@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class MovieRepository {
@@ -44,5 +45,32 @@ public class MovieRepository {
 
     public List<String> getMoviesByDirectorName2(){
         return movieDirectorDb.keySet().stream().toList();
+    }
+
+    public String deleteDirectorByName(String name){
+         directorDb.remove(name);
+         for(Map.Entry<String,String>entry:movieDirectorDb.entrySet()){
+             if(entry.getValue().equals(name)){
+                 String temp=entry.getKey();
+                 movieDb.remove(temp);
+                 movieDirectorDb.remove(temp);
+             }
+         }
+          return "movies deleted successfully";
+    }
+
+    public String deleteAllDirectors(){
+        for(String s:directorDb.keySet()){
+            directorDb.remove(s);
+            for(Map.Entry<String,String>entry:movieDirectorDb.entrySet()){
+                if(entry.getValue().equals(s)){
+                    String temp=entry.getKey();
+                    movieDb.remove(temp);
+                    movieDirectorDb.remove(temp);
+                }
+            }
+        }
+
+        return "deleted successfully";
     }
 }

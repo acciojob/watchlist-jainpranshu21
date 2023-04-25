@@ -3,6 +3,7 @@ package com.driver;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -71,6 +72,16 @@ public class MovieService {
         for(Movie movie:temp){
             ans.add(movie.getName());
         }
+        return ans;
+    }
+
+    public String deleteDirectorByName(String name){
+        String ans=movieRepository.deleteDirectorByName(name);
+        return ans;
+    }
+
+    public String deleteAllDirectors(){
+        String ans=movieRepository.deleteAllDirectors();
         return ans;
     }
 }
