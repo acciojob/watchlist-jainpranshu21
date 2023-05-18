@@ -28,9 +28,12 @@ public class MovieService {
     public Movie getMovieByName(String name){
         List<Movie> movies=movieRepository.getAllMovie();
         Movie ans=null;
+      //  System.out.println("name"+name);
         for(Movie movie:movies){
+          //  System.out.println("movie"+movie.getName());
             if(movie.getName().equals(name)){
                  ans=movie;
+            //     System.out.println("check");
             }
         }
         return ans;
