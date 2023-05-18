@@ -27,7 +27,7 @@ public class MovieRepository {
 
     public String addMovieDirectorPair(String nameMovie,String nameDirector){
         movieDirectorDb.put(nameMovie,nameDirector);
-        return "MovieDirectorPair added successully";
+        return "MovieDirectorPair added successfully";
     }
 
     public List<Movie> getAllMovie(){
