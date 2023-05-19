@@ -66,4 +66,9 @@ public class MovieController {
       String ans=movieService.deleteAllDirectors();
       return  new ResponseEntity<>(ans,HttpStatus.CREATED);
     }
+
+   /* @GetMapping("/testing")
+    public String tester(@RequestParam("name") String name){
+      return "tested";
+    }*/
 }
