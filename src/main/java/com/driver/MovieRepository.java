@@ -33,20 +33,32 @@ public class MovieRepository {
     }
 
     public List<Movie> getAllMovie(){
-
-        return movieDb.values().stream().toList();
+        List<Movie>movies=new ArrayList<>();
+        for(Movie movie:movieDb.values())
+            movies.add(movie);
+        return movies;
     }
 
     public List<Director> getAllDirector(){
-        return directorDb.values().stream().toList();
+        List<Director>directors=new ArrayList<>();
+        for(Director director:directorDb.values())
+            directors.add(director);
+        return directors;
     }
 
     public List<String> getMoviesByDirectorName(){
-        return movieDirectorDb.values().stream().toList();
+        List<String>name=new ArrayList<>();
+        for (String s:movieDirectorDb.values())
+            name.add(s);
+        return name;
     }
 
     public List<String> getMoviesByDirectorName2(){
-        return movieDirectorDb.keySet().stream().toList();
+
+        List<String>name=new ArrayList<>();
+        for (String s:movieDirectorDb.keySet())
+            name.add(s);
+        return name;
     }
 
     public String deleteDirectorByName(String name){
