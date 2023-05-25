@@ -67,8 +67,5 @@ public class MovieController {
       return  new ResponseEntity<>(ans,HttpStatus.CREATED);
     }
 
-   /* @GetMapping("/testing")
-    public String tester(@RequestParam("name") String name){
-      return "tested";
-    }*/
+
 }

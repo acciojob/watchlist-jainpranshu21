@@ -46,20 +46,17 @@ public class MovieRepository {
         return directors;
     }
 
-    public List<String> getMoviesByDirectorName(){
+    public List<String> getMoviesByDirectorName(String name1){
         List<String>name=new ArrayList<>();
-        for (String s:movieDirectorDb.values())
-            name.add(s);
+        for (Map.Entry<String,String>entry:movieDirectorDb.entrySet()){
+            if(entry.getValue().equals(name1))
+                name.add(entry.getKey());
+        }
+
         return name;
     }
 
-    public List<String> getMoviesByDirectorName2(){
 
-        List<String>name=new ArrayList<>();
-        for (String s:movieDirectorDb.keySet())
-            name.add(s);
-        return name;
-    }
 
     public String deleteDirectorByName(String name){
          directorDb.remove(name);

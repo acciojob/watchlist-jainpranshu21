@@ -51,22 +51,8 @@ public class MovieService {
     }
 
     public List<String> getMoviesByDirectorName(String name){
-        List<String>director=movieRepository.getMoviesByDirectorName();
-        List<String>ans=new ArrayList<>();
-        String d="";
-        for(String s:director){
-            if(s.equals(name)){
-                 d=s;
-                break;
-            }
-        }
-        List<String>movie=movieRepository.getMoviesByDirectorName2();
-        for(String m:movie){
-            if(m.equals(d)){
-                ans.add(m);
-            }
-        }
-        return ans;
+        List<String>director=movieRepository.getMoviesByDirectorName(name);
+        return director;
     }
 
     public List<String> findAllMovies(){
