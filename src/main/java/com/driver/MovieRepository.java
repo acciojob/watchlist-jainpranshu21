@@ -28,6 +28,8 @@ public class MovieRepository {
     }
 
     public String addMovieDirectorPair(String nameMovie,String nameDirector){
+        if(!movieDb.containsKey(nameMovie))return "movie doesn't exists";
+        if(!directorDb.containsKey(nameDirector))return "director doesn't exists";
         movieDirectorDb.put(nameMovie,nameDirector);
         return "MovieDirectorPair added successfully";
     }
