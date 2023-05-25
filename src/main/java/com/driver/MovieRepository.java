@@ -13,11 +13,7 @@ public class MovieRepository {
     HashMap<String,Director>directorDb=new HashMap<>();
     HashMap<String,String>movieDirectorDb=new HashMap<>();
 
-    /*public MovieRepository() {
-        this.movieDb = new HashMap<String, Movie>();
-        this.directorDb = new HashMap<String, Director>();
-        this.movieDirectorDb = new HashMap<String,String>();
-    }*/
+
 
     public String addMovie(Movie movie){
       String name=movie.getName();
