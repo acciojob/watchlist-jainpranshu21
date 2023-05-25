@@ -65,7 +65,6 @@ public class MovieRepository {
          for(Map.Entry<String,String>entry:movieDirectorDb.entrySet()){
              if(entry.getValue().equals(name)){
                  String temp=entry.getKey();
-                 movieDb.remove(temp);
                  movieDirectorDb.remove(temp);
              }
          }
@@ -78,7 +77,6 @@ public class MovieRepository {
             for(Map.Entry<String,String>entry:movieDirectorDb.entrySet()){
                 if(entry.getValue().equals(s)){
                     String temp=entry.getKey();
-                    movieDb.remove(temp);
                     movieDirectorDb.remove(temp);
                 }
             }
